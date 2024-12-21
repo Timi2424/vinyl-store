@@ -18,7 +18,7 @@ export class PaymentService {
     if (!stripeSecretKey) {
       throw new InternalServerErrorException('Stripe secret key is not configured');
     }
-    this.stripe = new Stripe(stripeSecretKey, { apiVersion: '2024-10-28.acacia' });
+    this.stripe = new Stripe(stripeSecretKey, {});
   }
 
   async createPaymentIntent(amount: number, currency: string, userEmail: string, vinylId: string) {
